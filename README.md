@@ -1,1 +1,1 @@
-# terraform-aws-opensearch
+# Terraform-aws-opensearch
