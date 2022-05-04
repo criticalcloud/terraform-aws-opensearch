@@ -12,13 +12,18 @@ resource "aws_opensearch_domain" "opensearch" {
     enabled = true
     internal_user_database_enabled = true
   }
-
-  master_user_options {
+  
+  advanced_security_options {
+    enabled = true
+    internal_user_database_enabled = false
+    master_user_options {
     master_user_name = var.master_user_name
     master_user_password = var.master_user_password
+    }
   }
 
   ebs_options {
+    ebs_enabled = true
     volume_type = var.volume_type
     volume_size = var.volume_size
   }
