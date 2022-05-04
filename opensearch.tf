@@ -28,7 +28,7 @@ resource "aws_opensearch_domain" "opensearch" {
     volume_size = var.volume_size
   }
   
-  vpc_opitions {
+  vpc_options {
     subnet_ids = var.subnet_ids
   }
   
