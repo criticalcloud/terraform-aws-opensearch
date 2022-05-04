@@ -5,6 +5,7 @@ resource "aws_opensearch_domain" "opensearch" {
   cluster_config {
     instance_type = var.instance_type
     instance_count = var.instance_count
+    zone_awareness_enabled = var.zone_awareness_enabled
   }
 
   advanced_security_options {

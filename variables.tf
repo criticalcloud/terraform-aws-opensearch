@@ -6,11 +6,15 @@ variable "instance_type" {}
 
 variable "instance_count" {}
 
+variable "zone_awareness_enabled" {}
+
 variable "master_user_name" {}
 
 variable "master_user_password" {}
 
-variable "availability_zone_count" {}
+variable "volume_type" {}
+
+variable "volume_size" {}
 
 variable "subnet_ids" {}
 
