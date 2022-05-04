@@ -33,6 +33,9 @@ resource "aws_opensearch_domain" "opensearch" {
     custom_endpoint = var.custom_endpoint
 
   }
+  tags = {
+    Name = var.domain_name
+  }
 }
 
 
