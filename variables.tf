@@ -18,4 +18,6 @@ variable "volume_size" {}
 
 variable "subnet_ids" {}
 
+variable "custom_endpoint_certificate_arn" {}
+
 variable "custom_endpoint" {}
