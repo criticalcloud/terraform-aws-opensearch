@@ -14,6 +14,4 @@ variable "availability_zone_count" {}
 
 variable "subnet_ids" {}
 
-variable "custom_endpoint_certificate_arn" {}
-
 variable "custom_endpoint" {}
