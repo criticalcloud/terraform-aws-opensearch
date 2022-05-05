@@ -42,7 +42,7 @@ resource "aws_opensearch_domain" "opensearch" {
 resource "aws_opensearch_domain_policy" "policy" {
   domain_name = var.domain_name
 
-  access_policies = <<POLICY
+policy = <<POLICY
 {
     "Version": "2012-10-17",
     "Statement": [
