@@ -16,6 +16,4 @@ variable "volume_type" {}
 
 variable "volume_size" {}
 
-variable "custom_endpoint_certificate_arn" {}
-
 variable "custom_endpoint" {}
