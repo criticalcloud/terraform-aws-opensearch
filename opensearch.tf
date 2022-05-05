@@ -5,7 +5,7 @@ resource "aws_opensearch_domain" "opensearch" {
   cluster_config {
     instance_type = var.instance_type
     instance_count = var.instance_count
-    zone_awareness_enabled = var.zone_awareness_enabled
+    zone_awareness_enabled = false
   }
 
   advanced_security_options {
@@ -42,7 +42,7 @@ resource "aws_opensearch_domain" "opensearch" {
 resource "aws_opensearch_domain_policy" "policy" {
   domain_name = var.domain_name
 
-  access_policies = <<POLICIES
+  access_policies = <<POLICY
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -56,5 +56,5 @@ resource "aws_opensearch_domain_policy" "policy" {
         }
     ]
 }
-POLICIES
+POLICY
 }
