@@ -40,8 +40,8 @@ resource "aws_opensearch_domain" "opensearch" {
             "Effect": "Allow",
             "Principal": {
               "AWS": "*"
-            }
-            "Action": "es:*"
+            },
+            "Action": "es:*",
             "Resource": "arn:aws:es:sa-east-1:656298508873:domain/${var.domain_name}/*"
         }
     ]
