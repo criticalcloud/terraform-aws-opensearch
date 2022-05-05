@@ -31,4 +31,20 @@ resource "aws_opensearch_domain" "opensearch" {
   tags = {
     Name = var.domain_name
   }
+
+  access_policies = <<POLICY
+ {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+              "AWS": "*"
+            }
+            "Action": "es:*"
+            "Resource": "arn:aws:es:sa-east-1:656298508873:domain/${var.domain_name}/*"
+        }
+    ]
+  }
+  POLICY
 }
