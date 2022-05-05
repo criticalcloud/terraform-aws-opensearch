@@ -32,7 +32,7 @@ resource "aws_opensearch_domain" "opensearch" {
     Name = var.domain_name
   }
 
-  access_policies = <<POLICY
+  access_policies = <<CONFIG
  {
     "Version": "2012-10-17",
     "Statement": [
@@ -46,5 +46,5 @@ resource "aws_opensearch_domain" "opensearch" {
         }
     ]
   }
-  POLICY
+  CONFIG
 }
