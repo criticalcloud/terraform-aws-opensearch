@@ -6,8 +6,6 @@ variable "instance_type" {}
 
 variable "instance_count" {}
 
-variable "role_arn" {}
-
 variable "zone_awareness_enabled" {}
 
 variable "master_user_name" {}
