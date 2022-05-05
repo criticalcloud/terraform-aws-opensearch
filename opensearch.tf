@@ -24,7 +24,6 @@ resource "aws_opensearch_domain" "opensearch" {
   }
   
   domain_endpoint_options {
-    custom_endpoint_certificate_arn = var.custom_endpoint_certificate_arn
     custom_endpoint_enabled = true
     custom_endpoint = var.custom_endpoint
 
@@ -32,25 +31,4 @@ resource "aws_opensearch_domain" "opensearch" {
   tags = {
     Name = var.domain_name
   }
-}
-
-
-resource "aws_opensearch_domain_policy" "policy" {
-  domain_name = var.domain_name
-
-  access_policies = <<CONFIG
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-              "AWS": "*"
-            }
-            "Action": "es:*"
-            "Resource": "arn:aws:es:sa-east-1:656298508873:domain/${var.domain_name}/*"
-        }
-    ]
-}
-CONFIG
 }
