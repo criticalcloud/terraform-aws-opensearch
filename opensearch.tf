@@ -8,6 +8,10 @@ resource "aws_opensearch_domain" "opensearch" {
     zone_awareness_enabled = false
   }
 
+  cognito_options {
+    role_arn = var.role_arn
+  }
+
   advanced_security_options {
     enabled = true
     internal_user_database_enabled = false
