@@ -23,10 +23,6 @@ resource "aws_opensearch_domain" "opensearch" {
     volume_size = var.volume_size
   }
   
-  vpc_options {
-    subnet_ids = var.subnet_ids
-  }
-  
   domain_endpoint_options {
     custom_endpoint_certificate_arn = var.custom_endpoint_certificate_arn
     custom_endpoint_enabled = true
@@ -42,7 +38,7 @@ resource "aws_opensearch_domain" "opensearch" {
 resource "aws_opensearch_domain_policy" "policy" {
   domain_name = var.domain_name
 
-policy = <<POLICY
+  access_policy = <<CONFIG
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -56,5 +52,5 @@ policy = <<POLICY
         }
     ]
 }
-POLICY
+CONFIG
 }
