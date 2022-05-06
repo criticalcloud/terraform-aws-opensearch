@@ -1,19 +1,49 @@
-variable "domain_name" {}
+variable "domain_name" {
+    default = ""
+}
 
-variable "engine_version" {}
+variable "engine_version" {
+    default = "OpenSearch_1.2"
+}
 
-variable "instance_type" {}
+variable "instance_type" {
+    default = "t3.small.search"
+}
 
-variable "instance_count" {}
+variable "instance_count" {
+    default = 1
+}
 
-variable "zone_awareness_enabled" {}
+variable "master_user_name" {
+    default = "admin"
+}
 
-variable "master_user_name" {}
+variable "master_user_password" {
+    default = ""
+}
 
-variable "master_user_password" {}
+variable "volume_size" {
+    default = 30
+}
 
-variable "volume_type" {}
+variable "custom_endpoint" {
+    default = ""
+}
 
-variable "volume_size" {}
+variable "cert_arn" {
+  default = ""
+}
 
-variable "custom_endpoint" {}
+variable "vpc_name" {
+    default = ""
+}
+
+variable "subnet_cidr" {
+  type = list
+  default = [""]
+}
+
+variable "tags" {
+    type = map
+    default = {}
+}
