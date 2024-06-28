@@ -71,11 +71,7 @@ resource "aws_opensearch_domain" "opensearch" {
 
   lifecycle {
     ignore_changes = [
-      advanced_security_options {
-        master_user_options {
-          master_user_password
-        }
-      },
+      advanced_security_options.master_user_options.master_user_password,
     ]
   }
 }
