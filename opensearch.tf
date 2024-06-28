@@ -69,4 +69,13 @@ resource "aws_opensearch_domain" "opensearch" {
     }
   POLICY
 
+  lifecycle {
+    ignore_changes = [
+      advanced_security_options {
+        master_user_options {
+          master_user_password
+        }
+      },
+    ]
+  }
 }
